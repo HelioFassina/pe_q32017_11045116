@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int max_div_comum (int a, int b) {
+	if (b == 0)	return a;
+	return max_div_comum (b, a % b);
+}
+
+int main () {
+	int a, b,resposta;
+	
+	scanf ("%d %d", &a, &b);
+	resultado = max_div_comum (a, b);
+	printf ("%d\n", resposta);
+	
+	return 0;
+}

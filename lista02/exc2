@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+float volume (float l, float c, float h) {
+	return l*c*h;
+}
+
+int main () {
+	float largura, comprimento, altura;
+	
+	scanf ("%f %f %f", &larg, &comp, &alt);
+	printf ("%.2f\n", volume (larg, comp, alt));
+	
+	return 0;
+}

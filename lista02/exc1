@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int check (int x) {
+	return x%2;
+}
+
+int main () {
+	int x;
+  
+	scanf ("%d", &x);
+	printf ("%d\n", check(x));
+  
+	return 0;
+}
