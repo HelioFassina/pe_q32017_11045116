@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+long double gauss_legendre (long double a, long double b, long double p, long double t, int n_iteration) {
+	long double pi;
+	
+	for (int i = 1; i <= n_iteration; i++) {
+		long double calc;
+		calc = (a + b) / 2;
+		b = sqrt (a * b);
+		t = t - p * pow ((a - calc), 2);
+		p = 2 * p;
+		a = calc;
+	}
+	pi = pow ((a + b), 2) /  (4 * t);
+	return pi;
+}
+
+int main () {
+	long double a, b, t, p, pi;
+	int n_iteration = 10;
+	
+	a = 1;
+	b = 1 / (sqrt(2));
+	t = 1.0 / 4;
+	p = 1;
+	
+	pi = gauss_legendre (a, b, p, t, n_iteration);
+	printf ("%.20Lf\n", pi);
+	
+	return 0;
+}
